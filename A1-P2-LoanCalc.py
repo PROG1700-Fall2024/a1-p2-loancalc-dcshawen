@@ -1,7 +1,7 @@
 """
-Student Name: Dan Shaw w0190983
-Program Name: Weekly Loan Calculator
-Program Description:  Develop a short term loan calculator program as a console application 
+    Student Name: Dan Shaw w0190983
+    Program Name: Weekly Loan Calculator
+    Program Description:  Develop a short term loan calculator program as a console application 
 """
 
 def main():
@@ -12,22 +12,16 @@ def main():
     print("Please enter the following information to calculate your weekly payments:")
     
     # Get loan amount from user, validate it as a number, then convert to float
-    loanAmount = input("\tLoan Amount: ")
-    while validateFloat(loanAmount) == 0:
-        loanAmount = input("\tLoan Amount: ")
-    loanAmount = float(loanAmount)
+    while (loanAmount := validateFloat(input("\tTotal Loan Amount: "))) == 0:
+        pass
 
     # Get interest rate from user, validate it as a number, then convert to float
-    interestRate = input("\tInterest Rate: ")
-    while validateFloat(interestRate) == 0:
-        interestRate = input("\tInterest Rate: ")
-    interestRate = float(interestRate)
+    while (interestRate := validateFloat(input("\tInterest Rate: "))) == 0:
+        pass
     
     # Get loan term in years from the user
-    loanTerm = input("\tLoan Term (in years): ")
-    while validateFloat(loanTerm) == 0:
-        loanTerm = input("\tLoan Term (in years): ")
-    loanTerm = float(loanTerm)
+    while (loanTerm := validateFloat(input("\tLoan Term (in years): "))) == 0:
+        pass
 
     print("\nCalculating weekly payments... ...\n")
 
@@ -40,10 +34,10 @@ def main():
         you will have a weekly payment of: ${2:.2f}""".format(interestRate, loanTerm, weeklyPayment))
 
 # Validates whether inputQuery is a valid number by trying to convert to a float
+# Returns 1 if a valid float, 0 if not
 def validateFloat(inputQuery):
     try:
-        float(inputQuery)
-        return 1
+        return float(inputQuery)
     except:
         errorString = "Please enter a valid number"
         print("-" * len(errorString))
