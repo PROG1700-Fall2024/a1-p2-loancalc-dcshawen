@@ -12,6 +12,8 @@ def main():
     print("Please enter the following information to calculate your weekly payments:")
     
     # Get loan amount from user, validate it as a number, then convert to float
+    # As long as validateFloat() returns None, the while loop will never end and the user will be continuously prompted for a float value
+    # Once a float value is entered, while loop ends and program continues
     while (loanAmount := validateFloat(input("\tTotal Loan Amount: "))) == None:
         pass
 
