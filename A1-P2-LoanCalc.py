@@ -30,8 +30,10 @@ def main():
     weeklyPayment = (weeklyInterest / (1 - (1 + weeklyInterest) ** (-52 * loanTerm))) * loanAmount
 
     # Output calculations, formatted
-    print("""With an interest rate of {0:.1f}% and a term of {1:.1f} years,
-        you will have a weekly payment of: ${2:.2f}""".format(interestRate, loanTerm, weeklyPayment))
+    print("""Interest Rate: {0:.1f}%
+    Loan Term: {1:.1f} years
+    Total Loan Amount: ${3:.2f}
+    Weekly Payment: ${2:.2f}""".format(interestRate, loanTerm, weeklyPayment, loanAmount))
 
 # Validates whether inputQuery is a valid number by trying to convert to a float
 # Returns 1 if a valid float, 0 if not
