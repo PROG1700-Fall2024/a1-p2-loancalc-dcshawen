@@ -12,15 +12,15 @@ def main():
     print("Please enter the following information to calculate your weekly payments:")
     
     # Get loan amount from user, validate it as a number, then convert to float
-    while (loanAmount := validateFloat(input("\tTotal Loan Amount: "))) == 0:
+    while (loanAmount := validateFloat(input("\tTotal Loan Amount: "))) == None:
         pass
 
     # Get interest rate from user, validate it as a number, then convert to float
-    while (interestRate := validateFloat(input("\tInterest Rate: "))) == 0:
+    while (interestRate := validateFloat(input("\tInterest Rate: "))) == None:
         pass
     
     # Get loan term in years from the user
-    while (loanTerm := validateFloat(input("\tLoan Term (in years): "))) == 0:
+    while (loanTerm := validateFloat(input("\tLoan Term (in years): "))) == None:
         pass
 
     print("\nCalculating weekly payments... ...\n")
@@ -45,7 +45,7 @@ def validateFloat(inputQuery):
         print("-" * len(errorString))
         print(errorString)
         print("-" * len(errorString))
-        return 0
+        return None
 
 if __name__ == "__main__":
     main()
